@@ -1,0 +1,76 @@
+{% extends 'home/base.html' %}
+{% block title %}Bazaar Home{% endblock %}
+
+{% block content %}
+{% load static %}
+<!-- Slider -->
+    <div class="slider">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'home/images/gslider1.jpg' %}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'home/images/gslider2.jpg' %}" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'home/images/gslider3.jpg' %}" alt="Third slide">
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- Categories -->
+  <div class="heading">
+    <h2>Categories Offered</h2>
+    <hr>
+  </div>
+  <!-- Categories -->
+  <div class="container-fluid">
+    <div class="row">
+        {% for cat in cat_list %}
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <a href="/{{cat.title}}/{{cat.id}}">
+          <div class="mycat">
+            <p>{{cat.title}}</p>
+          </div>
+        </a>
+      </div>
+        {% endfor %}
+      {% include 'home/pagination.html' with page=cat_list %}
+    </div>
+    <!-- end of row -->
+    <!-- About us heading -->
+    <div class="row">
+      <div class="column col-lg-12 col-md-12 col-sm-12 col-xs-12 bg-light">
+        <div class="container py-5">
+          <h2 class="tittle">Welcome to Bazaar, yaha'n sab milta ha!</h2>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <!-- end of row -->
+    <!-- About us Detail -->
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="https://www.protouchpro.com/wp-content/uploads/2019/05/digital-banner-new.png" class="img-fluid">
+      </div>
+      <div class="col-sm-6">
+        <br>
+        <div>
+          <h4 class="font-weight-bold">About Us</h4>
+          <p class="text-justify">Khurram SOFTWARE SOLUTIONS an ISO 9001:2008 Certified Organization,adivsion of KhurramSoft organizations is the one and only place providing in-depth training on all latest Java/J2ee technologies and Java Certifications for the last decade.
+            <br>
+            <br>
+             Every blog and forum around the globe will represent KHURRAM SOFT as pioneer and leader in Java Certification training. When the discussion comes on Java, all the online communities will have only one word KHURRAM SOFT
+          </p>
+          <br>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    <!-- end of row -->
+
+
+  </div>
+  <br><br><br><br><br>
+{% endblock %}

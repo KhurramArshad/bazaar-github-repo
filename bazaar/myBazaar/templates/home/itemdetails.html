@@ -1,0 +1,75 @@
+{% extends 'home/base.html' %}
+{% block title %}Bazaar items{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home/css/itemdetails.css' %}">
+<div class="container-fluid">
+      <!-- start of row -->
+      <div class="row myrow">
+
+        <div class="column col-lg-4 col-md-4 col-sm-12 col-xs-12 padding-0">
+          <div class="item-image">
+            <img src="{{ item.image.url }}" alt="productImage">
+          </div>
+        </div>
+
+        <div class="column col-lg-8 col-md-8 col-sm-12 col-xs-12 padding-0">
+          <div class="item-detail">
+            <br>
+            <a href="/items/{{item.category.id}}">back to products</a>
+            <br><br>
+            <h4>{{ item.category}}</h4>
+            <h2>{{ item.name}}<small id="p-id">(ID : {{ item.pid}})</small></h2>
+            <br>
+            <span>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+            {% with comments.count as comments_count %}
+            <small>4.5 ({{comments_count}} review{{comments_count|pluralize}})</small><br>
+            {% endwith %}
+            <span class="curr" style="text-decoration: line-through;">Rs.{{ item.actual_price}}</span>&nbsp;<span id="actual-curr">Rs.{{item.discounted_price}}</span>
+            <br>
+            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- end of row -->
+      <div class="row comment-row">
+        <div class="column col-lg-4 col-md-12 col-sm-12 col-xs-12 padding-0">
+          <div class="commentform">
+              <form method="POST">
+              {% csrf_token %}
+              {{form.as_p}}
+              <input type="submit" value="Post Comment">
+            </form>
+          </div>
+        </div>
+        <div class="column col-lg-8 col-md-12 col-sm-12 col-xs-12 padding-0">
+          <div class="comments">
+              <br>
+            {% if comments %}
+              {% for comment in comments %}
+              <span id="first">{{comment.user|make_list|first|upper}}</span>&nbsp;&nbsp;<span id="name">{{comment.user|upper}}</span><br><span id="date">{{comment.created}}</span>
+                <p id="my-comment">{{comment.body|linebreaks}}</p>
+              {% endfor %}
+            {% else %}
+              <p style="color:red; text-align:center;">There are no Comments yet</p>
+            {% endif %}
+          </div>
+      </div>
+      </div>
+
+
+    </div>
+{% endblock %}
+<div class="row">
+        <div class="">
+
+        </div>
+      </div>

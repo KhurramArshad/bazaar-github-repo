@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif!important;
+    color: #3c3d3f;
+}
+.top-strip{
+  background: navy;
+  padding: 5px 0;
+  color: #fff !important;
+}
+.top-strip a{
+  color: #fff !important;
+  font-size: 13px !important;
+  letter-spacing: 1px;
+  font-weight: 700 !important;
+  padding-right: 5px;
+}
+.navbar{
+  margin-top: 45px;
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+.navbar-nav{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.input-group{
+  width: 450px;
+  height: 35px;
+  border-radius: 30px;
+    background: #f4f4f4;
+    margin-right: 10px !important;
+    margin-top: 3px;
+}
+.inp{
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background: #f4f4f4;
+  border-radius: 30px;
+  border: 30px;
+}
+.input-group-append{
+  margin-left: -20px;
+  margin-top: 10px;
+}
+/* SLIDER */
+.slider{
+  width: 100%;
+  height: 500px;
+  margin-top: 75px;
+}
+.w-100{
+  height: 500px;
+}
+
+/* COURSE HEADING */
+.heading{
+  width: 100%;
+  height: 60px;
+  margin-top: 15px;
+  text-align: center;
+}
+.heading h2{
+  color: navy;
+  margin-top: 5px;
+}
+.heading-course {
+    width: 100%;
+    height: 60px;
+    margin-top: 80px;
+    text-align: center;
+}
+.heading-course h2{
+  color: navy;
+  margin-top: 5px;
+}
+/* my categories */
+.mycat{
+  width: 300px;
+  height: 80px;
+  background: navy;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.mycat p{
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+
+/* about us */
+.tittle{
+  color: navy;
+  text-align: center;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  .font-weight-bold {
+    font-weight: 700 !important;
+  }
+  .text-justify {
+    text-align: justify !important;
+}
+
+/* Features */
+#service, .bg-grey {
+    background: #f9f9f9 !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.single_service{
+  background: #fff;
+  box-shadow: 3px 3px 3px 3px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.09);
+  border-radius: 10px;
+}
+.icon img{
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+}
+.single_service-body h4{
+  text-align: center;
+  font-size: 20px;
+}
+.single_service-body p{
+  text-align: center;
+  text-indent: inherit;
+  margin: 5px;
+
+}

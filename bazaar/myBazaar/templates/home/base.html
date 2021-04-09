@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/index.css' %}">
+    <script type="text/javascript" src="{% static 'home/js/jqueryMinified.js' %}"></script>
+    <script src="https://kit.fontawesome.com/17887dd7bf.js" crossorigin="anonymous"></script>
+    </head>
+  <body>
+
+    <div class="bootstrap-styles">
+      <div class="container-fluid top-strip px-lg-5">
+        <div class="row">
+          <div class="col-sm-4">
+            <i class="far fa-envelope"></i>
+            <a href="#">bazaar@gmail.com</a>
+          </div>
+          <div class="col-sm-8 text-right">
+            <a href="#"><i class="fas fa-mobile-alt mr-1" aria-hidden="true"></i>+92 335 9354246</a>
+            <a href="#" class="ml-3"><i class="fab fa-whatsapp mr-2" aria-hidden="true"></i>+92 333 1458883</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Nav-Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">BAZAAR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li> -->
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <form method="post">
+                <div class="input-group">
+                  <input type="text" placeholder="Search Courses" autocomplete="off" class="inp">
+                  <div class="input-group-append">
+                    <i aria-hidden="true" class="fas fa-search"></i>
+                  </div>
+                </div>
+              </form>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">PRODUCTS<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-cart-arrow-down"></i><span class="sr-only">(current)</span></a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/logout">LOGOUT</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/login">LOGIN <span class="sr-only">(current)</span></a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block content %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
